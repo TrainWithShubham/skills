@@ -24,13 +24,13 @@ Based on the [Resume Masterclass](https://trainwithshubham.com) — the "7 deadl
 ## Installation
 
 ```bash
-npx skills add LondheShubham153/agent-skills
+npx skills add TrainWithShubham/skills
 ```
 
 Or install a specific skill:
 
 ```bash
-npx skills add LondheShubham153/agent-skills --skill resume-review
+npx skills add TrainWithShubham/skills --skill resume-review
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ The skill auto-triggers on phrases like "review my resume", "roast my resume", "
 ## Repository structure
 
 ```
-agent-skills/
+skills/
 ├── README.md
 ├── LICENSE
 └── skills/
