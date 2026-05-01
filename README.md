@@ -40,6 +40,24 @@ Grounded in **2024–2026 cited sources**: LinkedIn's deployed LLM ranking syste
 
 Especially strong for **DevOps, SRE, Cloud, Platform, and Infrastructure** profiles. Works for any technical LinkedIn. Includes **India market** specifics: the Oct-2025 Notice Period field, Bengaluru-not-Bangalore canonical naming, public-CTC red flag, and India-fintech title-inflation detection.
 
+### `mock-interview`
+
+Run a scenario-based **DevOps & Cloud mock interview**, then deliver a brutally honest analysis and a tailored prep plan. Configurable by:
+
+- **Topic** — Kubernetes, AWS, Docker, Terraform, CI/CD, Linux, Monitoring & Observability, System Design, Networking, Security, or Mixed
+- **Difficulty** — Junior (0–2y) / Mid (2–5y) / Senior (5–8y) / Staff+ (8+y)
+- **Target company tier** — Service (TCS, Infosys, Wipro, Capgemini, HCL) / Product (Razorpay, Zerodha, Swiggy, PhonePe, Atlassian) / MANG-FAANG (Meta, Apple, Netflix, Google, Amazon, Microsoft)
+
+Conducts the interview in **interviewer voice** — no hints, no mid-session praise, single follow-up per question. Then flips to **coach mode** at the end:
+
+- **Per-question analysis** — what landed, what didn't (with citations to your actual phrasing), the strong-candidate answer in 60–90 seconds, and what the interviewer would write down at your target tier
+- **Patterns across the session** — habits that hurt vs. habits that help
+- **Tier-by-tier verdict** — Pass / Borderline / Fail at Service, Product, and MANG/FAANG separately (no "pass everywhere" hedge)
+- **7-day prep plan** — every day tied to a specific gap from this interview, with a concrete resource
+- **Three drills** — actionable enough to start tomorrow
+
+Especially strong for **DevOps, SRE, Cloud, Platform, and Infrastructure** roles. ~70 seed scenario questions across 10 topics; generates fresh scenarios when the seeds get stale.
+
 ## Installation
 
 ```bash
@@ -51,6 +69,7 @@ Or install a specific skill:
 ```bash
 npx skills add TrainWithShubham/skills --skill resume-review
 npx skills add TrainWithShubham/skills --skill linkedin-review
+npx skills add TrainWithShubham/skills --skill mock-interview
 ```
 
 ## Usage
@@ -90,6 +109,26 @@ Or naturally:
 
 The skill auto-triggers on phrases like "review my LinkedIn", "audit my profile", "why am I not getting recruiter DMs", "is my LinkedIn good", or sharing a LinkedIn PDF without explicit instructions.
 
+### `mock-interview`
+
+Trigger the skill when you have an upcoming DevOps / SRE / Cloud / Platform interview:
+
+```
+/mock-interview
+```
+
+Or skip the setup questions by passing parameters inline:
+
+```
+/mock-interview kubernetes mid Amazon 5
+```
+
+Or naturally:
+
+> "Mock interview me for a senior SRE role at a fintech — focus on K8s and incident response."
+
+The skill auto-triggers on phrases like "mock interview", "interview prep", "interview me", "test me on K8s/AWS", or any signal that you have a real DevOps / SRE / Cloud / Platform interview coming up. No PDF or upload required — the entire session runs in chat.
+
 ## Requirements
 
 - Resume / LinkedIn profile must be provided as a **text-based PDF** (not scanned images). For LinkedIn, use **More → Save to PDF** on the profile page.
@@ -110,14 +149,22 @@ skills/
     │       ├── ats-rules.md
     │       ├── keywords-bank.md
     │       └── market-specific.md
-    └── linkedin-review/
+    ├── linkedin-review/
+    │   ├── SKILL.md
+    │   └── references/
+    │       ├── scoring-rubric.md
+    │       ├── linkedin-rules-and-ssi.md
+    │       ├── market-specific.md
+    │       ├── keywords-bank.md
+    │       └── sources.md
+    └── mock-interview/
         ├── SKILL.md
         └── references/
-            ├── scoring-rubric.md
-            ├── linkedin-rules-and-ssi.md
-            ├── market-specific.md
-            ├── keywords-bank.md
-            └── sources.md
+            ├── company-tiers.md
+            ├── difficulty-rubric.md
+            ├── feedback-rubric.md
+            ├── question-patterns.md
+            └── topics.md
 ```
 
 ## Contributing
